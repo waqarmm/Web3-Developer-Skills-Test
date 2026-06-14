@@ -105,10 +105,11 @@ export default function QuestDetailPage() {
 
         <section className="surface h-fit space-y-4 p-6 lg:sticky lg:top-8">
           <h2 className="font-semibold">Actions</h2>
-          <p className="text-sm text-amber-800">
-            TODO: implement transaction hooks in <code className="text-xs">lib/hooks/useQuestEscrow.ts</code> so
-            these buttons send real transactions.
-          </p>
+          {!isConnected && (
+            <p className="text-sm text-amber-700">
+              Connect your wallet in the sidebar to interact with this quest.
+            </p>
+          )}
 
           {quest.status === 0 && !isPoster && (
             <button
